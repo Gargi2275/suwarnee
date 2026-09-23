@@ -1,0 +1,534 @@
+﻿/*
+ * ═══════════════════════════════════════════════════════════
+ *  SURAWANEE DNYANMANDIR — GLOBAL SACRED ANIMATIONS
+ *  Professional, Vedic-themed micro-animations for every page
+ * ═══════════════════════════════════════════════════════════
+ */
+
+/* ─────────────────────────────────────────────
+   1. KEYFRAME DEFINITIONS
+───────────────────────────────────────────── */
+
+/* Flame / Diya flicker */
+@keyframes flame-flicker {
+  0%, 100% { transform: scaleY(1) scaleX(1) translateY(0); opacity: 1; filter: brightness(1); }
+  15%       { transform: scaleY(1.08) scaleX(0.96) translateY(-2px); opacity: 0.95; }
+  30%       { transform: scaleY(0.95) scaleX(1.04) translateY(1px); opacity: 1; filter: brightness(1.15); }
+  50%       { transform: scaleY(1.12) scaleX(0.94) translateY(-3px); opacity: 0.92; }
+  70%       { transform: scaleY(0.98) scaleX(1.02) translateY(0); opacity: 1; }
+  85%       { transform: scaleY(1.05) scaleX(0.97) translateY(-1px); filter: brightness(1.2); }
+}
+
+/* Sacred Om pulse / glow ring */
+@keyframes om-pulse {
+  0%, 100% { transform: scale(1); opacity: 0.7; text-shadow: 0 0 8px rgba(212,150,34,0.6); }
+  50%       { transform: scale(1.08); opacity: 1; text-shadow: 0 0 28px rgba(212,150,34,1), 0 0 48px rgba(200,84,19,0.5); }
+}
+
+/* Lotus bloom open */
+@keyframes lotus-bloom {
+  0%   { transform: scale(0.4) rotate(-30deg); opacity: 0; }
+  60%  { transform: scale(1.08) rotate(4deg); opacity: 1; }
+  80%  { transform: scale(0.97) rotate(-1deg); }
+  100% { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+/* Gentle float */
+@keyframes sacred-float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  33%       { transform: translateY(-10px) rotate(1.5deg); }
+  66%       { transform: translateY(-5px) rotate(-1deg); }
+}
+
+/* Slow sacred spin */
+@keyframes sacred-spin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes sacred-spin-rev {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(-360deg); }
+}
+
+/* Concentric ring pulse */
+@keyframes ring-expand {
+  0%   { transform: translate(-50%, -50%) scale(0.5); opacity: 0.9; }
+  80%  { transform: translate(-50%, -50%) scale(1.6); opacity: 0.15; }
+  100% { transform: translate(-50%, -50%) scale(2); opacity: 0; }
+}
+
+/* Gold shimmer text */
+@keyframes gold-text-shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Scroll reveal */
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes reveal-scale {
+  from { opacity: 0; transform: scale(0.88); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* Page wipe */
+@keyframes page-wipe-in {
+  from { clip-path: inset(0 100% 0 0); opacity: 0.7; }
+  to   { clip-path: inset(0 0% 0 0); opacity: 1; }
+}
+
+/* Ember particles */
+@keyframes ember-rise {
+  0%   { transform: translateY(0) scale(1) rotate(0deg); opacity: 0.9; }
+  100% { transform: translateY(-80px) scale(0.2) rotate(180deg); opacity: 0; }
+}
+
+/* Shloka char reveal */
+@keyframes shloka-char {
+  from { opacity: 0; transform: translateY(12px) rotateX(-40deg); filter: blur(4px); }
+  to   { opacity: 1; transform: translateY(0) rotateX(0); filter: blur(0); }
+}
+
+/* Golden border glow sweep */
+@keyframes border-glow-sweep {
+  0%   { box-shadow: 0 0 0 0 rgba(212,150,34,0); }
+  30%  { box-shadow: 2px 0 16px 2px rgba(212,150,34,0.7); }
+  60%  { box-shadow: 0 2px 24px 3px rgba(200,84,19,0.5); }
+  100% { box-shadow: 0 0 0 0 rgba(212,150,34,0); }
+}
+
+/* Card levitate */
+@keyframes card-levitate {
+  0%, 100% { transform: translateY(0px); box-shadow: 0 8px 32px rgba(101,23,40,0.12); }
+  50%       { transform: translateY(-6px); box-shadow: 0 18px 48px rgba(101,23,40,0.2); }
+}
+
+/* Sparkle twinkle */
+@keyframes twinkle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.3; transform: scale(0.6) rotate(20deg); }
+}
+
+/* Ink draw line */
+@keyframes ink-draw {
+  from { clip-path: inset(0 100% 0 0); }
+  to   { clip-path: inset(0 0% 0 0); }
+}
+
+/* Breathe glow */
+@keyframes breathe-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(200,84,19,0.4); }
+  50%       { box-shadow: 0 0 0 10px rgba(200,84,19,0); }
+}
+
+/* Wave scroll marquee */
+@keyframes wave-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* Slide in */
+@keyframes slide-in-left {
+  from { opacity: 0; transform: translateX(-30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(30px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* Sacred background orbs (used in SacredBackground.tsx) */
+@keyframes sacredOrb1 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33%       { transform: translate(30px, -25px) scale(1.08); }
+  66%       { transform: translate(-20px, 15px) scale(0.94); }
+}
+
+@keyframes sacredOrb2 {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  40%       { transform: translate(-25px, 20px) scale(1.1); }
+  80%       { transform: translate(15px, -10px) scale(0.92); }
+}
+
+@keyframes sacredFloat {
+  0%   { transform: translateY(0) rotate(0deg); }
+  50%  { transform: translateY(-18px) rotate(5deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+@keyframes sacredPulse {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.15; }
+  50%       { transform: translate(-50%, -50%) scale(1.1); opacity: 0.05; }
+}
+
+/* ─────────────────────────────────────────────
+   2. UTILITY CLASSES
+───────────────────────────────────────────── */
+
+.animate-flame          { animation: flame-flicker 2.2s ease-in-out infinite; }
+.animate-flame-slow     { animation: flame-flicker 4s ease-in-out infinite; }
+.animate-om             { animation: om-pulse 3s ease-in-out infinite; }
+.animate-lotus-bloom    { animation: lotus-bloom 0.9s cubic-bezier(0.22,1,0.36,1) both; }
+.animate-float          { animation: sacred-float 6s ease-in-out infinite; }
+.animate-float-slow     { animation: sacred-float 10s ease-in-out infinite; }
+.animate-float-fast     { animation: sacred-float 3.5s ease-in-out infinite; }
+.animate-sacred-spin    { animation: sacred-spin 60s linear infinite; }
+.animate-sacred-spin-fast { animation: sacred-spin 20s linear infinite; }
+.animate-sacred-spin-rev  { animation: sacred-spin-rev 80s linear infinite; }
+.animate-ring           { animation: ring-expand 3s ease-out infinite; }
+.animate-ring-2         { animation: ring-expand 3s ease-out 1s infinite; }
+.animate-ring-3         { animation: ring-expand 3s ease-out 2s infinite; }
+.animate-levitate       { animation: card-levitate 5s ease-in-out infinite; }
+.animate-levitate-2     { animation: card-levitate 6s ease-in-out 1.5s infinite; }
+.animate-levitate-3     { animation: card-levitate 7s ease-in-out 3s infinite; }
+.animate-twinkle        { animation: twinkle 2s ease-in-out infinite; }
+.animate-twinkle-2      { animation: twinkle 2.8s ease-in-out 0.5s infinite; }
+.animate-twinkle-3      { animation: twinkle 3.5s ease-in-out 1.2s infinite; }
+.animate-breathe        { animation: breathe-glow 2.5s ease-in-out infinite; }
+.animate-wave-scroll    { animation: wave-scroll 18s linear infinite; }
+.animate-wave-scroll-slow { animation: wave-scroll 30s linear infinite; }
+.animate-slide-left     { animation: slide-in-left 0.7s cubic-bezier(0.22,1,0.36,1) both; }
+.animate-slide-right    { animation: slide-in-right 0.7s cubic-bezier(0.22,1,0.36,1) both; }
+.animate-border-glow    { animation: border-glow-sweep 3s ease-in-out infinite; }
+.animate-ink-draw       { animation: ink-draw 1.2s cubic-bezier(0.22,1,0.36,1) both; }
+.page-enter             { animation: page-wipe-in 0.65s cubic-bezier(0.22,1,0.36,1) both; }
+
+/* Gold shimmer text */
+.text-gold-shimmer {
+  background: linear-gradient(90deg, #B87C13 0%, #FAE38A 30%, #D49622 50%, #FAE38A 70%, #B87C13 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gold-text-shimmer 3.5s linear infinite;
+}
+
+.text-saffron-shimmer {
+  background: linear-gradient(90deg, #883008 0%, #F97316 30%, #C85413 50%, #FDBA74 70%, #883008 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gold-text-shimmer 4s linear infinite;
+}
+
+/* Delay utilities */
+.delay-100  { animation-delay: 0.1s; }
+.delay-200  { animation-delay: 0.2s; }
+.delay-300  { animation-delay: 0.3s; }
+.delay-400  { animation-delay: 0.4s; }
+.delay-500  { animation-delay: 0.5s; }
+.delay-600  { animation-delay: 0.6s; }
+.delay-700  { animation-delay: 0.7s; }
+.delay-800  { animation-delay: 0.8s; }
+.delay-1000 { animation-delay: 1s; }
+.delay-1200 { animation-delay: 1.2s; }
+.delay-1500 { animation-delay: 1.5s; }
+
+/* ─────────────────────────────────────────────
+   3. SACRED CARD HOVER
+───────────────────────────────────────────── */
+
+.sacred-card {
+  position: relative;
+  transition: transform 0.35s cubic-bezier(0.22,1,0.36,1), box-shadow 0.35s ease;
+  will-change: transform;
+}
+
+.sacred-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(212,150,34,0.12) 0%, transparent 60%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+}
+
+.sacred-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 60px rgba(101,23,40,0.18), 0 0 0 1.5px rgba(212,150,34,0.5);
+}
+
+.sacred-card:hover::after { opacity: 1; }
+
+/* ─────────────────────────────────────────────
+   4. SCROLL REVEAL
+───────────────────────────────────────────── */
+
+.scroll-hidden {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1);
+}
+
+.scroll-hidden.scroll-visible { opacity: 1; transform: translateY(0); }
+
+.scroll-hidden-left {
+  opacity: 0; transform: translateX(-30px);
+  transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1);
+}
+
+.scroll-hidden-left.scroll-visible { opacity: 1; transform: translateX(0); }
+
+.scroll-hidden-right {
+  opacity: 0; transform: translateX(30px);
+  transition: opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1);
+}
+
+.scroll-hidden-right.scroll-visible { opacity: 1; transform: translateX(0); }
+
+/* ─────────────────────────────────────────────
+   5. MARQUEE STRIP
+───────────────────────────────────────────── */
+
+.sacred-marquee-track {
+  display: flex;
+  gap: 0;
+  white-space: nowrap;
+  will-change: transform;
+  animation: wave-scroll 22s linear infinite;
+}
+
+.sacred-marquee-track:hover { animation-play-state: paused; }
+
+/* ─────────────────────────────────────────────
+   6. GOLDEN RULE LINE
+───────────────────────────────────────────── */
+
+.golden-rule {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #D49622 30%, #FAE38A 50%, #D49622 70%, transparent);
+  border: none;
+  animation: ink-draw 1.2s cubic-bezier(0.22,1,0.36,1) both;
+  transform-origin: left;
+}
+
+/* ─────────────────────────────────────────────
+   7. ANIMATED UNDERLINE
+───────────────────────────────────────────── */
+
+.sacred-underline { position: relative; }
+
+.sacred-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 0; height: 2px;
+  background: linear-gradient(90deg, #C85413, #D49622);
+  transition: width 0.4s cubic-bezier(0.22,1,0.36,1);
+}
+
+.sacred-underline:hover::after { width: 100%; }
+
+/* ─────────────────────────────────────────────
+   8. STAT NUMBER GLOW
+───────────────────────────────────────────── */
+
+.stat-glow {
+  text-shadow: 0 0 20px rgba(212,150,34,0.6), 0 0 40px rgba(200,84,19,0.3);
+  animation: om-pulse 4s ease-in-out infinite;
+}
+
+/* ─────────────────────────────────────────────
+   9. BUTTON RIPPLE
+───────────────────────────────────────────── */
+
+.btn-sacred {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-sacred:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 28px rgba(200,84,19,0.4);
+}
+
+.btn-sacred:active { transform: translateY(0) scale(0.98); }
+
+/* ─────────────────────────────────────────────
+   10. COURSE CARD ACTIVE TOP LINE
+───────────────────────────────────────────── */
+
+.course-card-active::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #C85413, #D49622, #C85413);
+  background-size: 200%;
+  animation: gold-text-shimmer 2.5s linear infinite;
+  border-radius: 3px 3px 0 0;
+}
+
+/* ─────────────────────────────────────────────
+   11. EMBER
+───────────────────────────────────────────── */
+
+.ember {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  background: radial-gradient(circle, #FCD34D 0%, #C85413 60%, transparent 100%);
+  animation: ember-rise var(--dur, 4s) ease-out var(--delay, 0s) infinite;
+  will-change: transform, opacity;
+}
+
+/* ─────────────────────────────────────────────
+   12. REDUCED MOTION
+───────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════
+   13. YANTRA SELF-DRAW  (used by YantraReveal.tsx)
+═══════════════════════════════════════════════════════════ */
+
+@keyframes yantra-spin-outer {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+@keyframes yantra-spin-inner {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(-360deg); }
+}
+.animate-yantra-outer { animation: yantra-spin-outer 90s linear infinite; }
+.animate-yantra-inner { animation: yantra-spin-inner 60s linear infinite; }
+
+
+/* ═══════════════════════════════════════════════════════════
+   14. FLOATING BOKEH ORBS
+   Soft ambient light circles in hero / section backgrounds
+═══════════════════════════════════════════════════════════ */
+
+@keyframes orb-drift-a {
+  0%,100% { transform: translate(0,0) scale(1); }
+  25%      { transform: translate(40px,-30px) scale(1.06); }
+  50%      { transform: translate(-20px, 50px) scale(0.93); }
+  75%      { transform: translate(30px, 20px) scale(1.04); }
+}
+@keyframes orb-drift-b {
+  0%,100% { transform: translate(0,0) scale(1); }
+  33%      { transform: translate(-50px, 30px) scale(1.08); }
+  66%      { transform: translate(35px,-40px) scale(0.95); }
+}
+@keyframes orb-drift-c {
+  0%,100% { transform: translate(0,0) scale(1); }
+  40%      { transform: translate(60px, 25px) scale(1.1); }
+  80%      { transform: translate(-30px,-35px) scale(0.92); }
+}
+
+.orb-a { animation: orb-drift-a 18s ease-in-out infinite; }
+.orb-b { animation: orb-drift-b 24s ease-in-out infinite; }
+.orb-c { animation: orb-drift-c 20s ease-in-out infinite; }
+
+
+/* ═══════════════════════════════════════════════════════════
+   15. TILT CARD — hover shimmer gloss overlay
+═══════════════════════════════════════════════════════════ */
+
+.tilt-card {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), box-shadow 0.4s ease;
+}
+.tilt-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.18) 0%,
+    rgba(255,255,255,0) 40%,
+    rgba(212,150,34,0.08) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+.tilt-card:hover::after { opacity: 1; }
+
+
+/* ═══════════════════════════════════════════════════════════
+   16. SACRED BUTTON RIPPLE
+═══════════════════════════════════════════════════════════ */
+
+@keyframes btn-ripple {
+  from { transform: scale(0); opacity: 0.6; }
+  to   { transform: scale(2.8); opacity: 0; }
+}
+.btn-ripple-effect {
+  position: relative;
+  overflow: hidden;
+}
+.btn-ripple-effect::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: rgba(252,211,77,0.35);
+  transform: scale(0);
+  opacity: 0;
+  animation: btn-ripple 0.65s ease-out;
+  pointer-events: none;
+}
+.btn-ripple-effect:active::before { animation: btn-ripple 0.65s ease-out; }
+
+
+/* ═══════════════════════════════════════════════════════════
+   17. INK REVEAL (used by InkRevealHeading)
+       Stagger applied via JS — CSS fallback
+═══════════════════════════════════════════════════════════ */
+
+@keyframes ink-bleed {
+  0%   { opacity:0; filter: blur(14px); clip-path: inset(0 100% 0 0); }
+  60%  { filter: blur(2px); }
+  100% { opacity:1; filter: blur(0); clip-path: inset(0 0% 0 0); }
+}
+.ink-word {
+  display: inline-block;
+  animation: ink-bleed 0.55s cubic-bezier(0.22,1,0.36,1) both;
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   18. SACRED SECTION HEADER GLOW LINE
+═══════════════════════════════════════════════════════════ */
+
+@keyframes glow-line-in {
+  from { opacity:0; transform: scaleX(0); }
+  to   { opacity:1; transform: scaleX(1); }
+}
+.glow-line {
+  height: 1.5px;
+  border: none;
+  background: linear-gradient(90deg, transparent, #D49622 30%, #FAE38A 50%, #D49622 70%, transparent);
+  animation: glow-line-in 1.2s cubic-bezier(0.22,1,0.36,1) both;
+  transform-origin: center;
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   19. PARALLAX SECTION BACKGROUNDS
+       Applied via inline styles + CSS custom properties
+═══════════════════════════════════════════════════════════ */
+
+.parallax-bg {
+  will-change: transform;
+  backface-visibility: hidden;
+}

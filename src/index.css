@@ -1,0 +1,189 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: 'Cinzel', 'Rozha One', 'Noto Serif Devanagari', serif;
+  --font-serif: 'Noto Serif Devanagari', 'Cinzel', serif;
+  --font-sans: 'Plus Jakarta Sans', 'Noto Sans Devanagari', sans-serif;
+  --font-devanagari: 'Noto Serif Devanagari', 'Rozha One', serif;
+
+  --color-saffron-50: #FFF8F1;
+  --color-saffron-100: #FEEEDD;
+  --color-saffron-200: #FDD9BA;
+  --color-saffron-500: #E66C23;
+  --color-saffron-600: #C85413;
+  --color-saffron-700: #A83E0A;
+  --color-saffron-800: #883008;
+  --color-saffron-900: #6D2608;
+
+  --color-maroon-50: #FAF0F2;
+  --color-maroon-100: #F5DEE3;
+  --color-maroon-700: #822237;
+  --color-maroon-800: #651728;
+  --color-maroon-900: #4D101E;
+
+  --color-gold-50: #FDF9EE;
+  --color-gold-100: #F8EFD3;
+  --color-gold-500: #D49622;
+  --color-gold-600: #B87C13;
+  --color-gold-700: #93610C;
+
+  --color-parchment-50: #FCFAF7;
+  --color-parchment-100: #F7F3EB;
+  --color-parchment-200: #EFE8DA;
+  --color-parchment-300: #E3D9C4;
+  --color-parchment-400: #D1C3A7;
+  --color-ink: #221D18;
+  --color-ink-muted: #5C5348;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    color: var(--color-ink);
+    background-color: var(--color-parchment-50);
+    scroll-behavior: smooth;
+  }
+}
+
+/* Custom subtle paper texture & ornamental patterns */
+.bg-parchment-pattern {
+  background-color: #FAF7F2;
+  background-image: radial-gradient(#D8CEBC 0.75px, transparent 0.75px), radial-gradient(#D8CEBC 0.75px, #FAF7F2 0.75px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+}
+
+.bg-mandala-watermark {
+  background-image: radial-gradient(circle at center, rgba(184, 77, 25, 0.04) 0%, transparent 70%);
+}
+
+/* Smooth custom maroon red theme scrollbars */
+html {
+  scrollbar-color: #651728 #FAF7F2;
+  scrollbar-width: thin;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FAF7F2;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #651728;
+  border-radius: 6px;
+  border: 2px solid #FAF7F2;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C85413;
+}
+
+/* Thin red scrollbar utility for dropdowns */
+.custom-scrollbar-red {
+  scrollbar-width: thin;
+  scrollbar-color: #651728 transparent;
+}
+
+.custom-scrollbar-red::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.custom-scrollbar-red::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar-red::-webkit-scrollbar-thumb {
+  background-color: #651728;
+  border-radius: 9999px;
+}
+
+.custom-scrollbar-red::-webkit-scrollbar-thumb:hover {
+  background-color: #C85413;
+}
+
+
+/* ============================================================
+   SACRED BACKGROUND ANIMATIONS
+   ============================================================ */
+
+@keyframes sacredFloat {
+  0%   { transform: translateY(0px) rotate(0deg); opacity: var(--op, 0.05); }
+  50%  { transform: translateY(-18px) rotate(8deg); }
+  100% { transform: translateY(-6px) rotate(-4deg); opacity: var(--op, 0.08); }
+}
+
+@keyframes sacredOrb1 {
+  0%   { transform: translate(0, 0) scale(1); }
+  33%  { transform: translate(30px, -20px) scale(1.08); }
+  66%  { transform: translate(-20px, 25px) scale(0.94); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes sacredOrb2 {
+  0%   { transform: translate(0, 0) scale(1); }
+  40%  { transform: translate(-35px, 20px) scale(1.1); }
+  80%  { transform: translate(25px, -30px) scale(0.92); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
+@keyframes sacredPulse {
+  0%   { transform: translate(-50%, -50%) scale(0.85); opacity: 0.18; }
+  50%  { transform: translate(-50%, -50%) scale(1.15); opacity: 0.04; }
+  100% { transform: translate(-50%, -50%) scale(0.85); opacity: 0.18; }
+}
+
+@keyframes sacredSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes sacredRise {
+  0%   { transform: translateY(60px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes sacredGlow {
+  0%, 100% { box-shadow: 0 0 20px rgba(212,150,34,0.15), 0 0 40px rgba(200,84,19,0.08); }
+  50%       { box-shadow: 0 0 40px rgba(212,150,34,0.30), 0 0 80px rgba(200,84,19,0.15); }
+}
+
+@keyframes sacredShimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Floating gems / bokeh */
+@keyframes bokehFloat {
+  0%   { transform: translateY(0) scale(1);   opacity: 0.6; }
+  50%  { transform: translateY(-24px) scale(1.2); opacity: 1; }
+  100% { transform: translateY(0) scale(1);   opacity: 0.6; }
+}
+
+/* Sacred section wrapper — adds relative + overflow hidden */
+.sacred-section {
+  position: relative;
+  overflow: hidden;
+}
+/* Glass Scrollbar for Sidebar */
+.glass-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+.glass-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.glass-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.glass-scrollbar::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+}
+.glass-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+}

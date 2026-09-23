@@ -1,0 +1,7 @@
+{
+  "name": "Surawanee Dnyanmandir",
+  "description": "Modern cultural and educational portal for Surawanee Dnyanmandir Sanskrit Trust (Est. 1958, Thane, India).",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
